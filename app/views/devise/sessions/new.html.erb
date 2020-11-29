@@ -1,10 +1,13 @@
-<div class="contents row">
+<%= render partial: "shared/second_header" %>
+
+<div class="contents">
   <div class="container">
     <h2>Log in</h2>
     <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+    <%= devise_error_messages! %>
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "off" %>
       </div>
 
       <div class="field">
@@ -25,3 +28,5 @@
     <% end %>
   </div>
 </div>
+
+<%= render partial: "shared/second_footer" %>

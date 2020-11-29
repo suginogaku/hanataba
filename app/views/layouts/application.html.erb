@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%# レスポンシブデザインのための記述 %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%# googlefontsを適応するための記述 %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <%# fontawesomeを使うための記述 %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <title>Hanataba</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
