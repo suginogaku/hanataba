@@ -5,7 +5,7 @@
 | name | string | null: false |
 | email | string | unique: true |
 | encrypted_password | string | null: false |
-| profile | string | |
+| profile | text | |
 | picture | string | |
 
 ### Association
