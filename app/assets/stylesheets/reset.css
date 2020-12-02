@@ -317,7 +317,7 @@ button:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
-}
+} 
 
 /**
  * Remove arrow in IE10 & IE11
