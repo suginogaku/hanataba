@@ -3,6 +3,7 @@ class CreateTweets < ActiveRecord::Migration[6.0]
     create_table :tweets do |t|
       t.string :title, null:false
       t.text :description
+      # もしかするとrecommendedカラムにactivehashを用いる
       t.integer :recommended
       t.string :flower_name
       t.integer :prefecture_id
