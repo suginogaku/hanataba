@@ -6,7 +6,7 @@
       <h2>投稿する</h2>
 
       <%= form_with model: @tweet, local: true do |f| %>
-      <%# エラーメッセージを記述する %>
+
       <%= render partial: 'shared/tweet_error_messages', model: @tweet %>
 
         <div class="field">

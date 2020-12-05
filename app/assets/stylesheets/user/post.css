@@ -154,7 +154,8 @@ form textarea {
   margin-left: 5px;
 }
 
-@media (max-width: 1024px) {
+/* メディアクエリのブレイクポイントを1050pxに変更 */
+@media (max-width: 1050px) {
   .header {
     width: 100%;
     height: 80px;
@@ -170,8 +171,7 @@ form textarea {
   }
 
   .post {
-    padding-left: 15px;
-    font-size: 20px;
+    display: none;
   }
 }
 
@@ -190,11 +190,11 @@ form textarea {
     font-size: 40px;
   }
   
-  .header-list {
-    display: none;
+  .fa-comment-alt {
+    display: block;
   }
 
-  .menu-icon {
+  .fa-user {
     display: block;
   }
 }
