@@ -7,6 +7,7 @@
 
       <%= form_with model: @tweet, local: true do |f| %>
       <%# エラーメッセージを記述する %>
+      <%= render partial: 'shared/tweet_error_messages', model: @tweet %>
 
         <div class="field">
           <%= f.label :"投稿画像" %><span class="input-need">※必須</span><br />

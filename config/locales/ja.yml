@@ -9,4 +9,12 @@ ja:
         password: パスワード
         profile: プロフィール
         picture: 写真
-        
+      tweet:
+        title: 投稿タイトル
+        image: 投稿画像
+
+
+  activemodel: 
+    attributes:
+      prefecture:
+        prefecture_id: 都道府県
