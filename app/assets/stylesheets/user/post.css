@@ -154,8 +154,8 @@ form textarea {
   margin-left: 5px;
 }
 
-/* メディアクエリのブレイクポイントを1050pxに変更 */
-@media (max-width: 1050px) {
+/* メディアクエリのブレイクポイントを1070pxに変更 */
+@media (max-width: 1070px) {
   .header {
     width: 100%;
     height: 80px;
