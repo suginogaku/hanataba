@@ -13,8 +13,12 @@ ja:
         title: 投稿タイトル
         image: 投稿画像
 
-
   activemodel: 
     attributes:
       prefecture:
         prefecture_id: 都道府県
+
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%m/%d %H:%M"
