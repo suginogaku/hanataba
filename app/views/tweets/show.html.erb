@@ -1,0 +1,75 @@
+<%= render partial: "shared/header" %>
+
+<main>
+  <div class="main_contents">
+    <div class="main_container">
+      <div class="contents_row">
+          <div class="show_content_post">
+            <div class="show_content_right">
+              <div class="content_right_flex">
+                <div class="flex_left">
+                  <%= image_tag @tweet.image.variant(resize: '200x200'), class: 'tweet-image'%>
+                </div>
+                <div class="flex_right">
+                  <%# jsを適応する%>
+                  <div class="favorite_btn">お気に入りに追加する</div>
+                  <%# jsを適応する%>
+                  <div class="shop_btn">お店に行くリストに追加する</div>
+                  <div class="created_at"><%="投稿日時: #{l @tweet.created_at, format: :short}"%></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="show_content_left">
+              <h3 class="tweet_name"><%=@tweet.title%></h3>
+              <div class="tweet_text"><%=@tweet.description%></div>
+              <%# おすすめ度を表示 jsを適応するためにidを付与するデフォルトでは空の星を表示する%>
+              <div class="tweet_recommended"><%="おすすめ度: #{@tweet.recommended}"%></div>
+              <div class="flower_name"><%="花の名前:#{@tweet.flower_name}"%></div>
+              <div class="show_other_info">
+                <h2 class="show_other_title">購入した場所</h2>
+                <span class="show_info"><%= "県名: #{ @tweet.prefecture.name }"%></span>
+                <span class="show_info"><%= "市町村: #{ @tweet.city }"%></span>
+                <span class="show_info"><%= "店の名前: #{ @tweet.shop_name }"%></span>
+              </div>
+              <%# 追加実装のログを追加するフォーム %>
+              <div class="log_title">ログを追加する</div>
+              <%= form_with model: @tweet, local: true do |f| %>
+                <div class="field_flex">
+                  <div class="field">
+                    <%= f.text_field :hoge, class:"tweet_form" %>
+                  </div>
+                  <div class="actions">
+                    <%= f.submit "追加" %>
+                  </div>
+                </div>
+              <% end %>
+              <%# コメント機能を追加するフォーム %>
+              <div class="log_title">コメントする</div>
+              <%= form_with model: @tweet, local: true do |f| %>
+                <div class="field_flex">
+                  <div class="field">
+                    <%= f.text_field :hoge, class:"tweet_form" %>
+                  </div>
+                  <div class="actions">
+                    <%= f.submit "送信" %>
+                  </div>
+                </div>
+              <% end %>
+              <%# 以下にコメント一覧を表示する記述を追加する %>
+              <div class="tweet_link_btn">
+                <div class="link_btn">
+                  <span><%=link_to "詳細", tweet_path(@tweet.id), method: :get %></span>
+                  <span><%=link_to "編集", "#"%></span>
+                  <span><%=link_to "削除", "#"%></span>
+                </div>
+                <div class="tweet_link"><%=link_to "by  #{@tweet.user.name}", "#" %></div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+<main>
+
+<%= render partial: "shared/second_footer" %>

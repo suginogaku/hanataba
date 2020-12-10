@@ -15,26 +15,21 @@
   background-color: white;
 }
 
-.main_container h1 {
-  margin: 20px 0;
-  padding: 10px;
-  font-size: 20px;
-}
-
-.content_post {
+/* show_contentはshow.html.erbのみの記述 */
+.show_content_post {
   margin: 10px 0px;
   padding: 10px 0px;
   display: flex;
-  border-top: 1px solid #D8D8D8;
 }
 
-.content_right {
+/* show_content_rightはshow.html.erbのみの記述 */
+.show_content_right {
   width: 30%;
-  min-width: 200px;
   padding: 0px 10px;
 }
 
-.content_left {
+/* show_content_leftはshow.html.erbのみの記述 */
+.show_content_left {
   width: 70%;
   padding: 0px 10px;
 
@@ -69,22 +64,27 @@
 .tweet_recommended {
   text-align: right;
   margin-bottom: 20px;
-}
+} 
 
 .flower_name {
   margin-bottom: 20px;
+} 
+
+/* show_other_infoはshow.html.erbのみの記述 */
+.show_other_info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+} 
+
+/* show_other_titleはshow.html.erbのみの記述 */
+.show_other_title {
+  margin-bottom: 10px;
 }
 
-.tweet_other_info {
-  margin-bottom: 20px;
-}
-
-.tweet_other_title {
-  margin-bottom: 5px;
-}
-
-.other_info {
-  padding-right: 40px;
+/* show_infoはshow.html.erbのみの記述 */
+.show_info {
+  padding-bottom: 10px;
 }
 
 .log_title {
@@ -141,32 +141,22 @@
   .created_at {
     font-size: 15px;
   }
-
-  .tweet_other_info {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-  }
-
-  .other_info {
-    padding-bottom: 10px;
-  }
-  
 }
 
 /* ブレイクポイントを749に変更 */
 @media (max-width: 749px) {
-  .content_post {
+  /* .show_content_postはshow.html.erbのみの記述 */
+  .show_content_post {
     display: flex;
     flex-direction: column;
   }
-
-  .content_right {
+  /* .show_content_rightはshow.html.erbのみの記述 */
+  .show_content_right {
     width: 100%;
     padding: 10px 0px 20px;
   }
-
-  .content_left {
+  /* show_content_leftはshow.html.erbのみの記述 */
+  .show_content_left {
     width: 100%;
   }
 
@@ -187,4 +177,4 @@
     margin-bottom: 10px;
   }
 
-}
+} 
