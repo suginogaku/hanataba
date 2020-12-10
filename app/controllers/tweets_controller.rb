@@ -1,5 +1,7 @@
 class TweetsController < ApplicationController
   # before_action :authenticate_user!, except: [:index, :show]
+  before_action :tweet_find, only: [:show, :edit, :update]
+
   def index
     @tweets = Tweet.order('created_at DESC')
   end
@@ -18,11 +20,27 @@ class TweetsController < ApplicationController
   end
 
   def show
-    @tweet = Tweet.find(params[:id])
   end
+
+  def edit
+    redirect_to root_path unless current_user.id == @tweet.user_id
+  end
+
+  def update
+    if @tweet.update(tweet_params)
+      redirect_to tweet_path(@tweet)
+    else
+      render :edit
+    end
+  end
+  
 
   private
   def tweet_params
     params.require(:tweet).permit(:title, :image, :description, :recommended, :flower_name, :prefecture_id, :city, :shop_name).merge(user_id: current_user.id)
+  end
+
+  def tweet_find
+    @tweet = Tweet.find(params[:id])
   end
 end

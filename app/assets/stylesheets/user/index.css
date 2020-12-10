@@ -97,12 +97,12 @@
   margin-bottom: 10px;
 }
 
-.field {
+.log_field {
   width: 80%;
   padding-right: 20px;
 }
 
-.actions {
+.log_actions {
   width: 20%;
   padding-right: 20px;
 }
