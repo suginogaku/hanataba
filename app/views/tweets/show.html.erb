@@ -60,9 +60,11 @@
               <%# 以下にコメント一覧を表示する記述を追加する %>
               <div class="tweet_link_btn">
                 <div class="link_btn">
-                  <span><%=link_to "詳細", tweet_path(@tweet.id), method: :get %></span>
-                  <span><%=link_to "編集", edit_tweet_path(@tweet.id) %></span>
-                  <span><%=link_to "削除", tweet_path(@tweet.id), method: :delete %></span>
+                    <span><%=link_to "詳細", tweet_path(@tweet.id), method: :get %></span>
+                  <% if user_signed_in? && current_user.id == @tweet.user_id %>
+                    <span><%=link_to "編集", edit_tweet_path(@tweet.id) %></span>
+                    <span><%=link_to "削除", tweet_path(@tweet.id), method: :delete %></span>
+                  <% end %>
                 </div>
                 <div class="tweet_link"><%=link_to "by  #{@tweet.user.name}", "#" %></div>
               </div>
