@@ -1,0 +1,75 @@
+.profile_row {
+  margin: 10px 0px;
+  padding: 10px 0px;
+  display: flex;
+  border-top: 1px solid #D8D8D8;
+}
+
+.profile_left {
+  width: 30%;
+  min-width: 200px;
+  padding: 0px 10px;
+}
+
+.profile_right {
+  width: 70%;
+  padding: 0px 10px;
+}
+/* ここまで投稿一覧のcssの当て方と変わりない */
+
+.profile_name {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.profile_text {
+  margin-bottom: 10px;
+}
+
+.follow_list {
+  margin-bottom: 20px;
+}
+
+.follow_list span {
+  margin-right: 10px;
+  border-bottom: 1px solid;
+}
+
+.follow_list span:hover {
+  transition: all 0.5s ease 0s;
+  color: rgba(128,128,128, 0.5);
+  opacity: 0.8;
+  border-bottom: 1px solid  rgba(128,128,128, 0.5);
+}
+
+.profile_edit {
+  margin-bottom: 20px;
+}
+
+.profile_edit span {
+  border-bottom: 1px solid;
+}
+
+.profile_edit span:hover {
+  transition: all 0.5s ease 0s;
+  color: rgba(128,128,128, 0.5);
+  opacity: 0.8;
+  border-bottom: 1px solid  rgba(128,128,128, 0.5);
+}
+
+/* ブレイクポイントを749に変更 */
+@media (max-width: 749px) {
+  .profile_row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile_right {
+    width: 100%;
+  }
+
+  .profile_left {
+    width: 100%;
+  }
+}

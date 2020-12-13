@@ -1,8 +1,28 @@
 <%= render partial: "shared/header" %>
-
 <main>
   <div class="main_contents">
     <div class="main_container">
+    <%# ここからプロフィールの記述 %>
+      <div class="profile">
+        <h1>プロフィール</h1>
+        <div class="profile_row">
+          <div class="profile_left">
+            <%= image_tag @user.image.variant(resize: '200x200') if @user.image.attached? %>
+          </div>
+          <div class="profile_right">
+            <h3 class="profile_name"><%="#{@user.name}"%></h3>
+            <div class="profile_text"><%=@user.profile%></div>
+            <div class="follow_list">
+              <span><%=link_to "フォロー", "#" %></span>
+              <span><%=link_to "フォロワー", "#" %></span>
+            </div>
+            <div class="profile_edit">
+              <span><%=link_to "プロフィール編集", "#" %></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%# ここまでがプロフィールの記述 %>
       <h1>投稿一覧</h1>
       <div class="contents_row">
         <% @tweets.each do |tweet| %>

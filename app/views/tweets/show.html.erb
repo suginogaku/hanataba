@@ -66,7 +66,7 @@
                     <span><%=link_to "削除", tweet_path(@tweet.id), method: :delete %></span>
                   <% end %>
                 </div>
-                <div class="tweet_link"><%=link_to "by  #{@tweet.user.name}", "#" %></div>
+                <div class="tweet_link"><%=link_to "by  #{@tweet.user.name}", user_path(@tweet.user_id) %></div>
               </div>
             </div>
           </div>
