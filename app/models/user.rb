@@ -12,4 +12,6 @@ class User < ApplicationRecord
 
   has_many :tweets
   has_many :comments
+  # userモデルにもactivestorageで画像ファイルを添付
+  has_one_attached :image
 end
