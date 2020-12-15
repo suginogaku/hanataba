@@ -8,10 +8,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :email, uniqueness: true
-  validates :password, length: { minimum: 6 }
 
   has_many :tweets
   has_many :comments
   # userモデルにもactivestorageで画像ファイルを添付
   has_one_attached :image
+  # プロフィール編集時にエラーメッセージが出力されないように記述
+  attr_accessor :current_password
 end
