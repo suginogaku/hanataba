@@ -50,7 +50,7 @@
 
       <% end %>
 
-      <div class="account_destory"><span><%= link_to "アカウントを削除する", user_path(@user.id), method: :delete %></span></div>
+      <div class="account_destory"><span><%= link_to "アカウントを削除する", user_registration_path, method: :delete, data: {confirm: "本当にこのアカウントを削除しますか？"} %></span></div>
 
     </div>
   </div>

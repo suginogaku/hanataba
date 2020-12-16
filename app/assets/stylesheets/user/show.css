@@ -129,6 +129,29 @@
   border-bottom: 1px solid  rgba(128,128,128, 0.5);
 }
 
+/* コメント表示フォームの記述 */
+.comments {
+  margin-bottom: 30px;
+}
+
+.comments h4 {
+  margin-bottom: 20px;
+}
+
+.comments a {
+  color: rgb(255, 192, 203);
+}
+
+.comments p {
+  margin-bottom: 5px;
+}
+
+.comments a:hover {
+  transition: all 0.5s ease 0s;
+  color: rgba(255, 192, 203, 0.5);
+  border-bottom: 1px solid rgba(255, 192, 203, 0.5);
+}
+
 @media (max-width: 1024px) {
   .favorite_btn {
     font-size: 15px;

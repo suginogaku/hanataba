@@ -44,20 +44,35 @@
                   </div>
                 </div>
               <% end %>
-              <%# コメント機能を追加するフォーム %>
+              <%# コメント投稿フォーム %>
               <div class="log_title">コメントする</div>
-              <%= form_with model: @tweet, local: true do |f| %>
-                <div class="field_flex">
-                <%# fieldとactionを適応させないためにlog_fieldとlog_actionを適応させている %>
-                  <div class="log_field">
-                    <%= f.text_field :hoge, class:"tweet_form" %>
+              <% if user_signed_in? %>
+                <%= form_with model: [@tweet, @comment], local: true do |f| %>
+                  <div class="field_flex">
+                  <%# fieldとactionを適応させないためにlog_fieldとlog_actionを適応させている %>
+                    <div class="log_field">
+                      <%= f.text_area :comment, class:"tweet_form" %>
+                    </div>
+                    <div class="log_actions">
+                      <%= f.submit "送信" %>
+                    </div>
                   </div>
-                  <div class="log_actions">
-                    <%= f.submit "送信" %>
-                  </div>
-                </div>
+                <% end %>
+              <% else %>
+                 <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
               <% end %>
-              <%# 以下にコメント一覧を表示する記述を追加する %>
+              <%# コメント一覧を表示する記述 %>
+              <div class="comments">
+                <h4>＜コメント一覧＞</h4>
+                <% if @comments %>
+                  <% @comments.each do |comment| %>
+                    <p>
+                      <strong><%= link_to comment.user.name, user_path(comment.user_id) %>：</strong>
+                      <%= comment.comment %>
+                    </p>
+                  <% end %>
+                <% end %>
+              </div>
               <div class="tweet_link_btn">
                 <div class="link_btn">
                     <span><%=link_to "詳細", tweet_path(@tweet.id), method: :get %></span>
