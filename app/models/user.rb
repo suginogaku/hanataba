@@ -9,8 +9,8 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
 
-  has_many :tweets
-  has_many :comments
+  has_many :tweets, foreign_key: :user_id, dependent: :destroy
+  # has_many :comments, foreign_key: :user_id, dependent: :destroy
   # userモデルにもactivestorageで画像ファイルを添付
   has_one_attached :image
   # プロフィール編集時にエラーメッセージが出力されないように記述
