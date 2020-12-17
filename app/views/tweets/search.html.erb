@@ -1,0 +1,77 @@
+<%= render partial: "shared/header" %>
+
+<main>
+  <div class="main_contents">
+    <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
+      <div class="search_flex">
+        <div class="search_field">
+          <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+        </div>
+        <div class="search_actions">
+          <%= form.submit "検索", class: "search-btn" %>
+        </div>
+      </div>
+    <% end %>
+    <div class="main_container">
+      <h1>投稿一覧</h1>
+      <div class="contents_row">
+        <% @tweets.each do |tweet| %>
+          <div class="content_post">
+            <div class="content_right">
+              <div class="content_right_flex">
+                <div class="flex_left">
+                  <%= image_tag tweet.image.variant(resize: '200x200'), class: 'tweet-image'%>
+                </div>
+                <div class="flex_right">
+                  <%# jsを適応する%>
+                  <div class="favorite_btn">お気に入りに追加する</div>
+                  <%# jsを適応する%>
+                  <div class="shop_btn">お店に行くリストに追加する</div>
+                  <div class="created_at"><%="投稿日時: #{l tweet.created_at, format: :short}"%></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content_left">
+              <h3 class="tweet_name"><%=tweet.title%></h3>
+              <div class="tweet_text"><%=tweet.description%></div>
+              <%# おすすめ度を表示 jsを適応するためにidを付与するデフォルトでは空の星を表示する%>
+              <div class="tweet_recommended"><%="おすすめ度: #{tweet.recommended}"%></div>
+              <div class="flower_name"><%="花の名前:#{tweet.flower_name}"%></div>
+              <div class="tweet_other_info">
+                <h2 class="tweet_other_title">購入した場所</h2>
+                <span class="other_info"><%= "県名: #{ tweet.prefecture.name }"%></span>
+                <span class="other_info"><%= "市町村: #{ tweet.city }"%></span>
+                <span class="other_info"><%= "店の名前: #{ tweet.shop_name }"%></span>
+              </div>
+              <%# 追加実装のログを追加するフォーム %>
+              <div class="log_title">ログを追加する</div>
+              <%= form_with model: @tweet, local: true do |f| %>
+                <div class="field_flex">
+                  <div class="log_field">
+                    <%= f.text_field :hoge, class:"tweet_form" %>
+                  </div>
+                  <div class="log_actions">
+                    <%= f.submit "追加" %>
+                  </div>
+                </div>
+              <% end %>
+              <div class="tweet_link_btn">
+                <div class="link_btn">
+                    <span><%=link_to "詳細", tweet_path(tweet.id) %></span>
+                  <% if user_signed_in? && current_user.id == tweet.user_id %>
+                    <span><%=link_to "編集", edit_tweet_path(tweet.id) %></span>
+                    <span><%=link_to "削除", tweet_path(tweet.id), method: :delete %></span>
+                  <% end %>
+                </div>
+                <div class="tweet_link"><%=link_to "by  #{tweet.user.name}", user_path(tweet.user_id) %></div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<main>
+
+<%= render partial: "shared/second_footer" %>

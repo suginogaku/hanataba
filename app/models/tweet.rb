@@ -11,7 +11,8 @@ class Tweet < ApplicationRecord
   # 検索処理の記述
   def self.search(search)
     if search != "" #検索フォームに何か値が入力されているかどうかで処理を分岐
-      Tweet.where('text LIKE(?)', "%#{search}%")
+      # タイトル、花の名前、市町村、お店の名前で検索できるように実装
+      Tweet.where('title LIKE(?) or flower_name LIKE(?) or city LIKE(?) or shop_name LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
     else
       Tweet.all
     end
