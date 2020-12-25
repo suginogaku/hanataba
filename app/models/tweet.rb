@@ -2,11 +2,16 @@ class Tweet < ApplicationRecord
   belongs_to :user
   has_many :comments
   has_one_attached :image
+  # applicationrecordを継承したモデルとactivehashを継承したモデルの紐付け
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
 
   validates :image, :title, presence: true
-  # validates :prefecture_id, numericality: { other_than: 1 } 
+  validates :title, length: { maximum: 30 }
+  validates :description, length: { maximum: 140 }
+  validates :recommended, numericality: {
+     only_interger: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 5, message: 'は1以上、5以下で入力して下さい'
+     }, allow_nil: true
 
   # 検索処理の記述
   def self.search(search)

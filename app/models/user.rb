@@ -8,6 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :email, uniqueness: true
+  validates :password, length: { minimum: 6 }
 
   has_many :tweets, foreign_key: :user_id, dependent: :destroy
   has_many :comments, foreign_key: :user_id, dependent: :destroy

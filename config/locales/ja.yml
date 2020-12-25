@@ -12,6 +12,10 @@ ja:
       tweet:
         title: 投稿タイトル
         image: 投稿画像
+        description: 説明
+        recommended: おすすめ度
+      comment:
+        comment: コメント
 
   activemodel: 
     attributes:
