@@ -81,7 +81,7 @@ describe UsersController, type: :request do
       end
     end
     context "ログインしていないユーザーの場合" do
-      it "ログイン画面にリダイレクトされること" do
+      it "ログイン画面にリダイレクトされる" do
         get edit_user_registration_path
         expect(response.status).to eq 302
         expect(response).to redirect_to new_user_session_path

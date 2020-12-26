@@ -27,7 +27,7 @@ describe Tweet do
         expect(@tweet.errors.full_messages).to include("Userを入力してください")
       end
       it "タイトルが30文字以内でなければ保存できない" do
-        @tweet.title = ("あ" * 51)
+        @tweet.title = ("あ" * 31)
         @tweet.valid?
         expect(@tweet.errors.full_messages).to include("投稿タイトルは30文字以内で入力してください")
       end

@@ -14,13 +14,13 @@ describe UsersController, type: :request do
       expect(response).to redirect_to root_path
      }
     context "ログインしていて管理者ユーザーの場合" do
-      it "destoryアクションにリクエストすると投稿一覧画面にリダイレクトされること" do
+      it "destoryアクションにリクエストすると投稿一覧画面にリダイレクトされる" do
         sign_in @user
         delete user_registration_path
         expect(response.status).to eq 302
         expect(response).to redirect_to root_path
       end
-      it "destoryアクションにリクエストすると自分のアカウントを削除できること" do
+      it "destoryアクションにリクエストすると自分のアカウントを削除できる" do
         sign_in @user
         edit_user_registration_path
         expect {
