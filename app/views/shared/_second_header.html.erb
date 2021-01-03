@@ -1,11 +1,22 @@
 <div class="second_header">
-  <div class="second_header-logo"><%= link_to "Hanataba", root_path %></div>
-    <div class="second_header-list">
-      <ul class="second_list">
-        <li><%= link_to "Hanatabaについて", "#", class: "second_post" %></li>
-        <li><%= link_to "ログイン", new_user_session_path, class: "second_post" %></li>
-        <li><%= link_to "新規登録", new_user_registration_path, class: "second_post" %></li>
-      </ul>
-    </div>
-  <div class="menu-icon" ><i class="fas fa-bars fa-2x"></i></div>	
+  <div class="second_header_logo"><%= link_to "Hanataba", root_path %></div>
+  <div class="second_header_list">
+    <ul class="second_list">
+      <li class="current-item"><%= link_to "Hanatabaについて", "#", class: "second_post" %></li>
+      <li><%= link_to "ログイン", new_user_session_path, class: "second_post" %></li>
+      <li><%= link_to "新規登録", new_user_registration_path, class: "second_post" %></li>
+    </ul>
+  </div>
+  <span class="nav_toggle">
+    <i></i>
+    <i></i>
+    <i></i>
+  </span>  
+  <nav class="nav">
+    <ul class="nav_menu_ul">
+      <li><%= link_to "Hanatabaについて", "#" %></li>
+      <li><%= link_to "ログイン", new_user_session_path %></li>
+      <li><%= link_to "新規登録", new_user_registration_path %></li>
+    </ul>
+  </div>
 </div>

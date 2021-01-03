@@ -1,0 +1,48 @@
+.show_content_post {
+  margin: 10px 0px;
+  padding: 10px 0px;
+  display: flex;
+}
+
+.show_content_right {
+  width: 30%;
+  padding: 0px 10px;
+}
+
+.show_content_left {
+  width: 70%;
+  padding: 0px 10px;
+
+}
+
+.show_other_info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+} 
+
+.show_other_title {
+  margin-bottom: 10px;
+}
+
+.show_info {
+  padding-bottom: 10px;
+}
+
+/* ブレイクポイントを749に変更 */
+@media (max-width: 749px) {
+  .show_content_post {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .show_content_right {
+    width: 100%;
+    padding: 10px 0px 20px;
+  }
+
+  .show_content_left {
+    width: 100%;
+  }
+
+} 

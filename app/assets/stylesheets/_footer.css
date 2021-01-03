@@ -1,0 +1,10 @@
+/* ここからがフッターの記述 */
+footer {
+  margin: 30px auto;
+  padding-top: 30px;
+  color: #D8D8D8;
+}
+
+footer p {
+  text-align: center;
+}

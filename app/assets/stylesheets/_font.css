@@ -1,0 +1,16 @@
+/* font-awesomeのアイコンのcss */
+.fa-comment-alt {
+  font-size: 30px;
+  padding-left: 40px;
+  line-height: 80px;
+}
+
+.fa-user {
+  font-size: 30px;
+  /* margin-left: 40px; */
+  line-height: 80px;
+}
+
+#lists {
+  margin-left: 40px;
+}

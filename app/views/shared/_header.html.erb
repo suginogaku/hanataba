@@ -6,9 +6,15 @@
       <li><%= link_to "お店に行くリスト", "#", class: "post" %></li>
       <li><%= link_to "お気に入り", "#", class: "post" %></li>
       <li><i class="far fa-comment-alt"></i></li>
-      <li><i class="fas fa-user"></i></li>
-      </ul>
+      <li id="lists"><i class="fas fa-user"></i>
+        <%# プルダウンメニューの実装 %>
+        <ul class="show-lists hidden" id="pull-down">
+          <li><%= link_to "プロフィール", "#" %></li>
+          <li><%= link_to "ユーザー一覧", "#" %></li>
+          <li><%= link_to "Hanatabaとは？", "#" %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path %></li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </div>
-<%# これは後でjavascriptで実装 %>
-<li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>

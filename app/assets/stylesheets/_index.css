@@ -15,21 +15,26 @@
   background-color: white;
 }
 
-/* show_contentはshow.html.erbのみの記述 */
-.show_content_post {
+.main_container h1 {
+  margin: 20px 0;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.content_post {
   margin: 10px 0px;
   padding: 10px 0px;
   display: flex;
+  border-top: 1px solid #D8D8D8;
 }
 
-/* show_content_rightはshow.html.erbのみの記述 */
-.show_content_right {
+.content_right {
   width: 30%;
+  min-width: 200px;
   padding: 0px 10px;
 }
 
-/* show_content_leftはshow.html.erbのみの記述 */
-.show_content_left {
+.content_left {
   width: 70%;
   padding: 0px 10px;
 
@@ -64,27 +69,22 @@
 .tweet_recommended {
   text-align: right;
   margin-bottom: 20px;
-} 
+}
 
 .flower_name {
   margin-bottom: 20px;
-} 
-
-/* show_other_infoはshow.html.erbのみの記述 */
-.show_other_info {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-} 
-
-/* show_other_titleはshow.html.erbのみの記述 */
-.show_other_title {
-  margin-bottom: 10px;
 }
 
-/* show_infoはshow.html.erbのみの記述 */
-.show_info {
-  padding-bottom: 10px;
+.tweet_other_info {
+  margin-bottom: 20px;
+}
+
+.tweet_other_title {
+  margin-bottom: 5px;
+}
+
+.other_info {
+  padding-right: 40px;
 }
 
 .log_title {
@@ -129,29 +129,6 @@
   border-bottom: 1px solid  rgba(128,128,128, 0.5);
 }
 
-/* コメント表示フォームの記述 */
-.comments {
-  margin-bottom: 30px;
-}
-
-.comments h4 {
-  margin-bottom: 20px;
-}
-
-.comments a {
-  color: rgb(255, 192, 203);
-}
-
-.comments p {
-  margin-bottom: 5px;
-}
-
-.comments a:hover {
-  transition: all 0.5s ease 0s;
-  color: rgba(255, 192, 203, 0.5);
-  border-bottom: 1px solid rgba(255, 192, 203, 0.5);
-}
-
 @media (max-width: 1024px) {
   .favorite_btn {
     font-size: 15px;
@@ -164,22 +141,32 @@
   .created_at {
     font-size: 15px;
   }
+
+  .tweet_other_info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  .other_info {
+    padding-bottom: 10px;
+  }
+  
 }
 
 /* ブレイクポイントを749に変更 */
 @media (max-width: 749px) {
-  /* .show_content_postはshow.html.erbのみの記述 */
-  .show_content_post {
+  .content_post {
     display: flex;
     flex-direction: column;
   }
-  /* .show_content_rightはshow.html.erbのみの記述 */
-  .show_content_right {
+
+  .content_right {
     width: 100%;
     padding: 10px 0px 20px;
   }
-  /* show_content_leftはshow.html.erbのみの記述 */
-  .show_content_left {
+
+  .content_left {
     width: 100%;
   }
 
@@ -200,4 +187,4 @@
     margin-bottom: 10px;
   }
 
-} 
+}
