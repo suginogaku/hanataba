@@ -22,7 +22,6 @@ describe UsersController, type: :request do
         get edit_user_registration_path
         expect(response.body).to include "投稿する"
       end
-      # 以下追加実装
       it "editアクションにリクエストするとレスポンスにお店に行くリストに遷移するリンクが存在する" do 
         sign_in @user 
         get edit_user_registration_path
@@ -38,7 +37,6 @@ describe UsersController, type: :request do
         get edit_user_registration_path
         expect(response.body).to include "fa-comment-alt"
       end
-      # 以上追加実装
       it "editアクションにリクエストするとレスポンスにユーザーアイコンが存在する" do 
         sign_in @user 
         get edit_user_registration_path

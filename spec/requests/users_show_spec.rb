@@ -19,7 +19,6 @@ describe UsersController, type: :request do
         get user_path(@user)
         expect(response.body).to include "投稿する"
       end
-      # 以下追加実装
       it "showアクションにリクエストするとレスポンスにお店に行くリストに遷移するリンクが存在する" do 
         get user_path(@user)
         expect(response.body).to include "お店に行くリスト"
@@ -32,7 +31,6 @@ describe UsersController, type: :request do
         get user_path(@user)
         expect(response.body).to include "fa-comment-alt"
       end
-      # 以上追加実装
       it "showアクションにリクエストするとレスポンスにユーザーアイコンが存在する" do 
         get user_path(@user)
         expect(response.body).to include "fa-user"
@@ -45,7 +43,6 @@ describe UsersController, type: :request do
         get user_path(@user)
         expect(response.body).to include @user.name
       end
-      # 以下追加実装
       it "showアクションにリクエストするとレスポンスにフォローページへのリンクが存在する" do 
         get user_path(@user)
         expect(response.body).to include "フォロー"
@@ -54,7 +51,6 @@ describe UsersController, type: :request do
         get user_path(@user)
         expect(response.body).to include "フォロワー"
       end
-      # 以上追加実装
     end
 
     context "ログインしていて、かつ、投稿者だった場合" do

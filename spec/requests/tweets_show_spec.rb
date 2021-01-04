@@ -20,7 +20,6 @@ describe TweetsController, type: :request do
         get tweet_path(@tweet)
         expect(response.body).to include "投稿する"
       end
-      # 以下追加実装
       it "showアクションにリクエストするとレスポンスにお店に行くリストに遷移するリンクが存在する" do 
         get tweet_path(@tweet)
         expect(response.body).to include "お店に行くリスト"
@@ -33,7 +32,6 @@ describe TweetsController, type: :request do
         get tweet_path(@tweet)
         expect(response.body).to include "fa-comment-alt"
       end
-      # 以上追加実装
       it "showアクションにリクエストするとレスポンスにユーザーアイコンが存在する" do 
         get tweet_path(@tweet)
         expect(response.body).to include "fa-user"
