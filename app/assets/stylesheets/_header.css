@@ -32,7 +32,7 @@
   position: absolute;
   top: 70px;
   color: white;
-  background-color: rgba(128,128,128);
+  background-color: rgb(128,128,128);
   box-shadow: 0 0 10px rgba(41,41,41,0.2);
   border-radius: 5px;
   padding:20px 20px 10px;
