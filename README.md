@@ -2,16 +2,18 @@
 購入したお花を記録して共有できる、投稿SNSサービス。
 
 # 環境
-本番環境のurlを書く
+[Web URL](https://hanataba.herokuapp.com/)
 * フレームワーク
   Ruby on Rails
 * データベース
   mySQL
 * ログインアカウント(テスト用)
-  メールアドレス:
-  パスワード:
-# 技術的ポイント
+  <br>
+  メールアドレス: test@test
+  <br>
+  パスワード: test2021
 
+# 技術的ポイント
 * **RSpec**でModel, Request, Systemテスト記述（計135examples）
 * レスポンシブ対応
 * **Rubocop**を使用したコード規約に沿った開発
