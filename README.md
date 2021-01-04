@@ -2,10 +2,12 @@
 購入したお花を記録して共有できる、投稿SNSサービス。
 
 # 環境
-[Web URL](https://hanataba.herokuapp.com/)
+* [Web URL](https://hanataba.herokuapp.com/)
 * フレームワーク
+  <br>
   Ruby on Rails
 * データベース
+  <br>
   mySQL
 * ログインアカウント(テスト用)
   <br>
