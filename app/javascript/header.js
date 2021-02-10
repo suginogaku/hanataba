@@ -14,3 +14,19 @@ window.addEventListener('load', function(){
     }
   })
 })
+
+// メニューの表示をクリックからホバーに改善
+// window.addEventListener('load', function(){
+//   // メニューアイコンのidの属性値
+//   const pullDownButton = document.getElementById("lists")
+//   // メニューのidの属性値
+//   const pullDownParents = document.getElementById("pull-down")
+
+
+//   pullDownButton.addEventListener('mouseover', function() {
+//     pullDownParents.setAttribute("style", "display: block")
+//   })
+//   pullDownButton.addEventListener('mouseout', function(){
+//     pullDownParents.removeAttribute("style", "display: none;")
+//   })
+// })
