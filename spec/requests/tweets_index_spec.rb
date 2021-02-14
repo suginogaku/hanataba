@@ -26,6 +26,14 @@ describe TweetsController, type: :request do
       #   get root_path
       #   expect(response.body).to have_selector ".tweet-image[src='(#{@tweet_image});']"
       # end
+      it "indexアクションにリクエストするとレスポンスにお気に入りに追加するボタンが存在する" do 
+        get root_path
+        expect(response.body).to include "お気に入りに追加する"
+      end
+      it "indexアクションにリクエストするとレスポンスにお店に行くリストボタンが存在する" do 
+        get root_path
+        expect(response.body).to include "お店に行くリストに追加する"
+      end
       it "indexアクションにリクエストするとレスポンスに投稿日時が存在する" do 
         get root_path
         expect(response.body).to include "投稿日時"
