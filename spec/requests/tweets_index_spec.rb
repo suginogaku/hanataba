@@ -12,30 +12,6 @@ describe TweetsController, type: :request do
         get root_path
         expect(response.status).to eq 200
       end
-      it "indexアクションにリクエストするとレスポンスにサービス名が存在する" do 
-        get root_path
-        expect(response.body).to include "Hanataba"
-      end
-      it "indexアクションにリクエストするとレスポンスに投稿ページに遷移するリンクが存在する" do 
-        get root_path
-        expect(response.body).to include "投稿する"
-      end
-      it "indexアクションにリクエストするとレスポンスにお店に行くリストに遷移するリンクが存在する" do 
-        get root_path
-        expect(response.body).to include "お店に行くリスト"
-      end
-      it "indexアクションにリクエストするとレスポンスにお気に入りリストに遷移するリンクが存在する" do 
-        get root_path
-        expect(response.body).to include "お気に入り"
-      end
-      it "indexアクションにリクエストするとレスポンスに通知を受け取るアイコンが存在する" do 
-        get root_path
-        expect(response.body).to include "fa-comment-alt"
-      end
-      it "indexアクションにリクエストするとレスポンスにユーザーアイコンが存在する" do 
-        get root_path
-        expect(response.body).to include "fa-user"
-      end
       it "indexアクションにリクエストするとレスポンスに投稿検索フォームが存在する" do 
         get root_path
         expect(response.body).to include "投稿を検索する"
@@ -45,9 +21,10 @@ describe TweetsController, type: :request do
         expect(response.body).to include @tweet.title
       end
       # activestorageを用いている為、imageカラムが存在しないエラーが発生する。activestorageとactivehashを紐付ける記述が必要
+      # fixture_file_uploadを使用する？
       # it "indexアクションにリクエストするとレスポンスに投稿済みのツイートの画像が存在する" do 
       #   get root_path
-      #   expect(response.body).to include @tweet.image
+      #   expect(response.body).to have_selector ".tweet-image[src='(#{@tweet_image});']"
       # end
       it "indexアクションにリクエストするとレスポンスに投稿日時が存在する" do 
         get root_path

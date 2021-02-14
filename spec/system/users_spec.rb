@@ -7,8 +7,6 @@ RSpec.describe 'ユーザー新規登録', type: :system do
   end
   context 'ユーザー新規登録ができるとき' do 
     it '正しい情報を入力すればユーザー新規登録ができてトップページに移動する' do
-      # トップページに移動する
-      # カーソルを合わせると新規登録ページへ遷移するボタンがあることを確認する
       # 新規登録ページへ移動する
       visit new_user_registration_path
       # ユーザー情報を入力する
@@ -22,8 +20,23 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       }.to change { User.count }.by(1)
       # トップページへ遷移する
       expect(current_path).to eq root_path
+      # トップページへ遷移するとレスポンスにサービス名が存在する
+      expect(page).to have_content("Hanataba")
+      # トップページへ遷移するとレスポンスに投稿ページに遷移するリンクが存在する
+      expect(page).to have_link '投稿する', href: new_tweet_path
+      # トップページへ遷移するとレスポンスにお店に行くリストに遷移するリンクが存在する" 
+      # expect(page).to have_link 'お店に行くリスト', href: 
+      # トップページへ遷移するとレスポンスにお気に入りリストに遷移するリンクが存在する" 
+      # expect(page).to have_link 'お気に入りリスト', href: 
+      # トップページへ遷移するとレスポンスに通知を受け取るアイコンが存在する" 
+      expect(page).to have_selector(".fa-comment-alt")
+      # トップページへ遷移するとレスポンスにユーザーアイコンが存在する
+      expect(page).to have_selector(".fa-user")
+      # 以下クリックからホバーに実装を変更した際に作成
+      # カーソルを合わせるとプロフィールボタンが表示されることを確認する
+      # カーソルを合わせるとユーザー一覧ボタンが表示されることを確認する
+      # カーソルを合わせるとサービス紹介ボタンが表示されることを確認する
       # カーソルを合わせるとログアウトボタンが表示されることを確認する
-      # span要素は他でも使用されている為、その親要素から指定している
       # expect(
       #   find("ブラウザ上の要素").find("ブラウザ上の要素").hover
       # ).to have_content('ログアウト')
@@ -71,6 +84,22 @@ RSpec.describe 'ログイン', type: :system do
       find('input[name="commit"]').click
       # トップページへ遷移することを確認する
       expect(current_path).to eq root_path
+      # トップページへ遷移するとレスポンスにサービス名が存在する
+      expect(page).to have_content("Hanataba")
+      # トップページへ遷移するとレスポンスに投稿ページに遷移するリンクが存在する
+      expect(page).to have_link '投稿する', href: new_tweet_path
+      # トップページへ遷移するとレスポンスにお店に行くリストに遷移するリンクが存在する" 
+      # expect(page).to have_link 'お店に行くリスト', href: 
+      # トップページへ遷移するとレスポンスにお気に入りリストに遷移するリンクが存在する" 
+      # expect(page).to have_link 'お気に入りリスト', href: 
+      # トップページへ遷移するとレスポンスに通知を受け取るアイコンが存在する" 
+      expect(page).to have_selector(".fa-comment-alt")
+      # トップページへ遷移するとレスポンスにユーザーアイコンが存在する
+      expect(page).to have_selector(".fa-user")
+      # 以下クリックからホバーに実装を変更した際に作成
+      # カーソルを合わせるとプロフィールボタンが表示されることを確認する
+      # カーソルを合わせるとユーザー一覧ボタンが表示されることを確認する
+      # カーソルを合わせるとサービス紹介ボタンが表示されることを確認する
       # カーソルを合わせるとログアウトボタンが表示されることを確認する
       # expect(
       #   find(".user_nav").find("span").hover
