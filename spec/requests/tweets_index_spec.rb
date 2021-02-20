@@ -70,7 +70,6 @@ describe TweetsController, type: :request do
         get root_path
         expect(response.body).to include "詳細"
       end
-
       it "indexアクションにリクエストするとレスポンスにユーザー詳細に遷移するボタンが存在する" do 
         get root_path
         expect(response.body).to include "by"
